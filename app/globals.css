@@ -1,0 +1,26 @@
+@import "tailwindcss";
+
+:root {
+  --red: #C21718;
+  --dark-red: #75141C;
+  --green: #155728;
+  --dark-green: #042D15;
+  --cream: #F7E7D8;
+  --tan: #D9BCA7;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  background: var(--cream);
+  color: #1a1a1a;
+  font-family: var(--font-body), system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+html { scroll-behavior: smooth; }
+
+details summary { cursor: pointer; list-style: none; }
+details summary::-webkit-details-marker { display: none; }
+details[open] .chevron { transform: rotate(-90deg); }
+.chevron { transform: rotate(90deg); transition: transform 0.2s; }
