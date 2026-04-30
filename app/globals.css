@@ -22,5 +22,5 @@ html { scroll-behavior: smooth; }
 
 details summary { cursor: pointer; list-style: none; }
 details summary::-webkit-details-marker { display: none; }
-details[open] .chevron { transform: rotate(-90deg); }
-.chevron { transform: rotate(90deg); transition: transform 0.2s; }
+details[open] .chevron { transform: rotate(45deg); }
+.chevron { transition: transform 0.2s ease; }
