@@ -1,12 +1,12 @@
 import type { Metadata } from "next";
 import { Hurricane, Nunito } from "next/font/google";
-import "./globals.css";
 
 const hurricane = Hurricane({
-  variable: "--font-display",
+  variable: "--font-hurricane",
   subsets: ["latin"],
   weight: "400",
 });
+import "./globals.css";
 
 const nunito = Nunito({
   variable: "--font-body",

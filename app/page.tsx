@@ -47,18 +47,18 @@ const PROBLEMAS = [
   },
   {
     emoji: "💍",
-    titulo: "Matrimonio no transcripto",
-    texto: "Te casaste después de obtener la ciudadanía y nunca lo informaste en Italia. Como ciudadano italiano, tu estado civil debe estar actualizado.",
+    titulo: "Matrimonio no registrado",
+    texto: "Te casaste luego de obtener la ciudadanía y nunca lo informaste en Italia. Es tu obligación mantener tu estado civil actualizado. Este paso es necesario para que tu pareja pueda obtener la ciudadanía por matrimonio.",
   },
   {
     emoji: "🏠",
-    titulo: "Cambiaste de domicilio",
-    texto: "Te mudaste de país o ciudad y el A.I.R.E. sigue con tu dirección anterior. Podés tener problemas con comunicaciones consulares.",
+    titulo: "¿Cambiaste de domicilio?",
+    texto: "Si tu dirección en el A.I.R.E. no está actualizada, podrías perderte comunicaciones importantes y tener problemas para votar o renovar tu pasaporte. Tenés un plazo legal de 90 días desde que te mudás para informar tu nuevo domicilio al consulado.",
   },
   {
     emoji: "💻",
     titulo: "FAST IT es un laberinto",
-    texto: "Entraste al portal, no entendiste nada, te rechazaron el trámite. Pasa todo el tiempo. Sabemos exactamente cómo resolverlo.",
+    texto: "Entraste al portal, no supiste cómo completar el registro, te rechazaron el trámite. Pasa todo el tiempo. Sabemos cómo resolverlo.",
   },
 ];
 
@@ -68,6 +68,24 @@ const INCLUYE = [
   { icon: "💬", text: "Asistencia por WhatsApp para cargar en FAST IT" },
   { icon: "🎥", text: "Videollamada de acompañamiento si lo necesitás" },
   { icon: "✅", text: "Seguimiento hasta la confirmación oficial" },
+];
+
+const TESTIMONIOS = [
+  {
+    nombre: "Agos",
+    foto: "/cliente 1.jpg",
+    texto: "Llevaba años sin actualizar mis datos y no sabía por dónde empezar. Lala me guió paso a paso y en menos de una semana todo quedó resuelto en el A.I.R.E.",
+  },
+  {
+    nombre: "Valentín",
+    foto: "/cliente 2.jpg",
+    texto: "Me habían rechazado el trámite dos veces en FAST IT. Con la ayuda de Lala pude completarlo sin problemas. Totalmente recomendable.",
+  },
+  {
+    nombre: "Yanina",
+    foto: "/cliente 3.jpg",
+    texto: "Tenía miedo de hacerlo sola y cometer errores. Lala me acompañó en cada paso y mis datos quedaron actualizados sin ninguna complicación.",
+  },
 ];
 
 const FAQS = [
@@ -143,7 +161,7 @@ export default function Home() {
             <div className="leading-tight">
               <p
                 style={{
-                  fontFamily: "var(--font-display)",
+                  fontFamily: "var(--font-logo)",
                   fontSize: "1.4rem",
                   color: "var(--red)",
                   lineHeight: 1,
@@ -200,7 +218,7 @@ export default function Home() {
                 color: "var(--tan)",
               }}
             >
-              🇮🇹 Para ciudadanos italianos en el exterior
+              Para ciudadanos italianos en el exterior
             </span>
           </div>
 
@@ -234,9 +252,8 @@ export default function Home() {
             className="mx-auto mb-10 text-lg leading-relaxed"
             style={{ color: "var(--tan)", maxWidth: "560px" }}
           >
-            Si tenés ciudadanía italiana y vivís fuera de Italia, estás obligado a mantener
-            actualizado tu registro consular. Te ayudamos a resolverlo{" "}
-            <strong style={{ color: "var(--cream)" }}>online, sin vueltas y sin errores.</strong>
+            Si sos ciudadano/a italiano y vivís fuera de Italia, es tu obligación mantener
+            actualizado tu registro consular. Te ayudamos a resolverlo.
           </p>
 
           {/* Dual CTA — cta.gallery pattern */}
@@ -269,6 +286,65 @@ export default function Home() {
             className="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2 w-[700px] h-[700px] rounded-full pointer-events-none"
             style={{ background: "radial-gradient(circle, rgba(194,23,24,0.12) 0%, transparent 65%)" }}
           />
+        </section>
+
+        {/* VIDEO */}
+        <section className="px-6 py-20" style={{ background: "var(--dark-green)" }}>
+          <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+            {/* Columna izquierda: video */}
+            <div
+              className="rounded-2xl overflow-hidden"
+              style={{
+                boxShadow: "0 8px 40px rgba(0,0,0,0.4)",
+                position: "relative",
+                aspectRatio: "1216 / 1620",
+              }}
+            >
+              <video
+                controls
+                playsInline
+                style={{
+                  position: "absolute",
+                  top: "-33.33%",
+                  left: 0,
+                  width: "100%",
+                  height: "133.33%",
+                }}
+              >
+                <source src="/Video Landing Page Ciudadania Italiana Con Lala.mp4" type="video/mp4" />
+              </video>
+            </div>
+
+            {/* Columna derecha: texto */}
+            <div style={{ color: "var(--cream)" }}>
+              <span
+                className="inline-block rounded-full px-4 py-1 text-xs font-bold mb-6 tracking-widest uppercase"
+                style={{ background: "rgba(247,231,216,0.1)", color: "var(--tan)" }}
+              >
+                Así trabajamos
+              </span>
+              <h2
+                className="mb-6"
+                style={{
+                  fontFamily: "var(--font-display)",
+                  fontSize: "clamp(2.2rem, 5vw, 3.5rem)",
+                  lineHeight: 1.05,
+                }}
+              >
+                Te guiamos paso a paso con tus trámites A.I.R.E.
+              </h2>
+              <p className="text-base leading-relaxed mb-4" style={{ color: "var(--tan)" }}>
+                El sistema consular italiano es confuso, lleno de formularios en otro idioma y pasos
+                que no están explicados en ningún lado. Es normal perderse — no es culpa tuya.
+              </p>
+              <p className="text-base leading-relaxed mb-8" style={{ color: "var(--tan)" }}>
+                Con años de experiencia resolviendo estos trámites, sabemos exactamente qué piden,
+                cómo presentarlo y cómo evitar los errores más comunes. Lo que a otros les lleva
+                meses, nosotros lo resolvemos rápido.
+              </p>
+              <WaButton size="md">Empezar ahora</WaButton>
+            </div>
+          </div>
         </section>
 
         {/* PROBLEMAS — bento grid, ventogridz pattern */}
@@ -307,9 +383,8 @@ export default function Home() {
                 <div>
                   <h3 className="font-bold text-2xl mb-2">Pasaporte bloqueado</h3>
                   <p className="text-base leading-relaxed" style={{ color: "var(--tan)" }}>
-                    Tenés ciudadanía italiana pero no podés avanzar con el pasaporte. Tu situación
-                    A.I.R.E. puede estar desactualizada — es uno de los motivos más comunes de bloqueo
-                    consular.
+                    ¿Necesitás tramitar o actualizar tu pasaporte italiano? Primero debés estar
+                    correctamente inscripto en el A.I.R.E.
                   </p>
                 </div>
                 <WaButton size="sm" className="self-start mt-2">
@@ -433,36 +508,16 @@ export default function Home() {
         {/* PRECIOS */}
         <section id="precios" className="px-6 py-24" style={{ background: "var(--cream)" }}>
           <div className="max-w-4xl mx-auto">
-            <div className="text-center mb-14">
-              <span
-                className="inline-block rounded-full px-4 py-1 text-xs font-bold mb-4 tracking-widest uppercase"
-                style={{ background: "var(--tan)", color: "var(--dark-red)" }}
-              >
-                Precios
-              </span>
-              <h2
-                style={{
-                  fontFamily: "var(--font-display)",
-                  fontSize: "clamp(2rem, 5vw, 3.5rem)",
-                  color: "var(--dark-red)",
-                }}
-              >
-                Simple y sin sorpresas
-              </h2>
-              <p className="mt-3 text-base" style={{ color: "#666" }}>
-                Pago único. Sin cuotas ni costos ocultos.
-              </p>
-            </div>
 
-            <div className="grid gap-6 md:grid-cols-2">
+            <div className="grid md:grid-cols-2 gap-12 items-center">
               {/* Plan Base */}
               <div
-                className="rounded-2xl p-8 flex flex-col"
+                className="rounded-2xl p-10 flex flex-col"
                 style={{ border: "2px solid var(--tan)", background: "white" }}
               >
-                <div className="mb-6">
+                <div className="mb-8">
                   <p className="text-xs font-bold tracking-widest uppercase mb-3" style={{ color: "var(--green)" }}>
-                    Plan Base
+                    Servicio de acompañamiento
                   </p>
                   <div className="flex items-end gap-2">
                     <span
@@ -480,16 +535,17 @@ export default function Home() {
                     </span>
                   </div>
                   <p className="text-sm mt-3 leading-relaxed" style={{ color: "#666" }}>
-                    Ideal si solo necesitás actualizar tu residencia o datos consulares.
+                    Todo lo que necesitás para actualizar tu situación A.I.R.E. sin complicaciones.
                   </p>
                 </div>
 
-                <ul className="space-y-3 text-sm flex-1 mb-8">
+                <ul className="space-y-4 text-sm flex-1 mb-10">
                   {[
-                    "Verificación de situación A.I.R.E.",
-                    "Checklist de documentos",
-                    "Asistencia WhatsApp para FAST IT",
-                    "Seguimiento hasta confirmación",
+                    "Verificación de tu situación actual",
+                    "Checklist para la preparación de los documentos necesarios",
+                    "Asistencia por WhatsApp para cargar en FAST IT",
+                    "Videollamada de acompañamiento",
+                    "Seguimiento hasta confirmación oficial",
                   ].map((item) => (
                     <li key={item} className="flex items-center gap-3" style={{ color: "#444" }}>
                       <span
@@ -502,68 +558,90 @@ export default function Home() {
                     </li>
                   ))}
                 </ul>
-                <WaButton size="md" className="w-full justify-center">
-                  Empezar con Plan Base
+                <WaButton size="lg" className="w-full justify-center">
+                  Empezar ahora
                 </WaButton>
               </div>
 
-              {/* Paquete Completo */}
-              <div
-                className="rounded-2xl p-8 flex flex-col relative overflow-hidden"
-                style={{ background: "var(--dark-red)", color: "var(--cream)" }}
-              >
+              {/* Columna derecha: texto */}
+              <div>
                 <span
-                  className="absolute top-5 right-5 text-xs font-bold px-3 py-1 rounded-full"
-                  style={{ background: "var(--cream)", color: "var(--dark-red)" }}
+                  className="inline-block rounded-full px-4 py-1 text-xs font-bold mb-6 tracking-widest uppercase"
+                  style={{ background: "var(--tan)", color: "var(--dark-red)" }}
                 >
-                  Más elegido
+                  Resultados reales
                 </span>
-
-                <div className="mb-6">
-                  <p className="text-xs font-bold tracking-widest uppercase mb-3" style={{ color: "var(--tan)" }}>
-                    Paquete Completo
-                  </p>
-                  <div className="flex items-end gap-2">
-                    <span
-                      style={{
-                        fontFamily: "var(--font-display)",
-                        fontSize: "4.5rem",
-                        lineHeight: 1,
-                      }}
-                    >
-                      €150
-                    </span>
-                    <span className="text-sm pb-2" style={{ color: "var(--tan)" }}>
-                      + €50/hijo
-                    </span>
-                  </div>
-                  <p className="text-sm mt-3 leading-relaxed" style={{ color: "var(--tan)" }}>
-                    Para quienes también necesitan registrar hijos o actualizar estado civil.
-                  </p>
-                </div>
-
-                <ul className="space-y-3 text-sm flex-1 mb-8">
-                  {[
-                    "Todo el Plan Base",
-                    "Inscripción de hijos",
-                    "Transcripción de matrimonio/divorcio",
-                    "Videollamada de acompañamiento",
-                  ].map((item) => (
-                    <li key={item} className="flex items-center gap-3" style={{ color: "var(--tan)" }}>
-                      <span
-                        className="flex-shrink-0 w-5 h-5 rounded-full flex items-center justify-center text-xs font-bold"
-                        style={{ background: "rgba(247,231,216,0.15)", color: "var(--cream)" }}
-                      >
-                        ✓
-                      </span>
-                      {item}
-                    </li>
-                  ))}
-                </ul>
-                <WaButton size="md" className="w-full justify-center">
-                  Quiero el paquete completo
-                </WaButton>
+                <h2
+                  className="mb-6"
+                  style={{
+                    fontFamily: "var(--font-display)",
+                    fontSize: "clamp(2.2rem, 5vw, 3.5rem)",
+                    color: "var(--dark-red)",
+                    lineHeight: 1.05,
+                  }}
+                >
+                  En menos de una semana tu situación consular queda resuelta
+                </h2>
+                <p className="text-base leading-relaxed" style={{ color: "#555" }}>
+                  No hace falta esperar meses ni lidiar con el portal solo. Con nuestra guía sabés
+                  exactamente qué documentos presentar, cómo cargarlos en FAST IT y qué esperar de
+                  tu consulado. La mayoría de nuestros clientes completan el trámite en menos de
+                  una semana desde el primer contacto.
+                </p>
               </div>
+            </div>
+          </div>
+        </section>
+
+        {/* TESTIMONIOS */}
+        <section className="px-6 py-24" style={{ background: "var(--dark-red)", color: "var(--cream)" }}>
+          <div className="max-w-5xl mx-auto">
+            <div className="text-center mb-14">
+              <span
+                className="inline-block rounded-full px-4 py-1 text-xs font-bold mb-4 tracking-widest uppercase"
+                style={{ background: "rgba(247,231,216,0.12)", color: "var(--tan)" }}
+              >
+                Clientes satisfechos
+              </span>
+              <h2
+                style={{
+                  fontFamily: "var(--font-display)",
+                  fontSize: "clamp(2rem, 5vw, 3.5rem)",
+                  lineHeight: 1.1,
+                }}
+              >
+                Ellos ya actualizaron<br />su A.I.R.E. con nosotros
+              </h2>
+            </div>
+
+            <div className="grid gap-6 md:grid-cols-3">
+              {TESTIMONIOS.map(({ nombre, foto, texto }) => (
+                <div
+                  key={nombre}
+                  className="rounded-2xl p-8 flex flex-col items-center text-center gap-5"
+                  style={{ background: "rgba(247,231,216,0.07)", border: "1px solid rgba(247,231,216,0.12)" }}
+                >
+                  <div
+                    className="rounded-full overflow-hidden flex-shrink-0"
+                    style={{ width: 120, height: 120, border: "3px solid rgba(247,231,216,0.25)" }}
+                  >
+                    <Image
+                      src={foto}
+                      alt={nombre}
+                      width={120}
+                      height={120}
+                      className="object-cover w-full h-full"
+                    />
+                  </div>
+                  <p className="text-base leading-relaxed flex-1" style={{ color: "var(--tan)" }}>
+                    &ldquo;{texto}&rdquo;
+                  </p>
+                  <div>
+                    <p className="font-bold text-sm" style={{ color: "var(--cream)" }}>{nombre}</p>
+                    <p className="text-xs mt-1" style={{ color: "var(--tan)", opacity: 0.75 }}>Actualización de datos A.I.R.E.</p>
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
         </section>
@@ -677,7 +755,7 @@ export default function Home() {
               />
               <span
                 style={{
-                  fontFamily: "var(--font-display)",
+                  fontFamily: "var(--font-logo)",
                   fontSize: "1.6rem",
                   color: "var(--cream)",
                   lineHeight: 1,

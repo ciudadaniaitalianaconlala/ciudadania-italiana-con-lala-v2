@@ -1,6 +1,40 @@
 @import "tailwindcss";
 
+@font-face {
+  font-family: "AlegreyaSC";
+  src: url("/fonts/AlegreyaSC-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Joan";
+  src: url("/fonts/Joan-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "PlayfairDisplay";
+  src: url("/fonts/PlayfairDisplay-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "PlayfairDisplayRegular";
+  src: url("/fonts/PlayfairDisplay-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
 :root {
+  --font-display: "PlayfairDisplayRegular", serif;
+  --font-logo: var(--font-hurricane), cursive;
   --red: #C21718;
   --dark-red: #75141C;
   --green: #155728;
