@@ -1,7 +1,8 @@
 import Image from "next/image";
+import { MobileNav } from "./components/MobileNav";
 
 // TODO: reemplazar con número real (sin + ni espacios, ej: 5491123456789)
-const WA_NUMBER = "549XXXXXXXXXX";
+const WA_NUMBER = "393395478679";
 const WA_MSG = encodeURIComponent("Hola! Me interesa el servicio de actualización A.I.R.E. 🇮🇹");
 const WA_URL = `https://wa.me/${WA_NUMBER}?text=${WA_MSG}`;
 
@@ -182,19 +183,10 @@ export default function Home() {
             <a href="#faq" className="hover:opacity-70 transition-opacity">FAQ</a>
           </nav>
 
-          <WaButton size="sm" className="hidden sm:inline-flex">
+          <WaButton size="sm" className="hidden md:inline-flex">
             Escribir por WhatsApp
           </WaButton>
-          <a
-            href={WA_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="sm:hidden p-2.5 rounded-full"
-            style={{ background: "#25D366" }}
-            aria-label="WhatsApp"
-          >
-            <WaIcon size={20} />
-          </a>
+          <MobileNav waUrl={WA_URL} />
         </div>
       </header>
 
@@ -292,28 +284,16 @@ export default function Home() {
         <section className="px-6 py-20" style={{ background: "var(--dark-green)" }}>
           <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-12 items-center">
             {/* Columna izquierda: video */}
-            <div
-              className="rounded-2xl overflow-hidden"
-              style={{
-                boxShadow: "0 8px 40px rgba(0,0,0,0.4)",
-                position: "relative",
-                aspectRatio: "1216 / 1620",
-              }}
+            <video
+              controls
+              playsInline
+              preload="none"
+              poster="/video-poster.jpg"
+              className="rounded-2xl w-full"
+              style={{ boxShadow: "0 8px 40px rgba(0,0,0,0.4)", aspectRatio: "1/1" }}
             >
-              <video
-                controls
-                playsInline
-                style={{
-                  position: "absolute",
-                  top: "-33.33%",
-                  left: 0,
-                  width: "100%",
-                  height: "133.33%",
-                }}
-              >
-                <source src="/Video Landing Page Ciudadania Italiana Con Lala.mp4" type="video/mp4" />
-              </video>
-            </div>
+              <source src="/ciudadania%20con%20lala%20landing%20page.mp4" type="video/mp4" />
+            </video>
 
             {/* Columna derecha: texto */}
             <div style={{ color: "var(--cream)" }}>
