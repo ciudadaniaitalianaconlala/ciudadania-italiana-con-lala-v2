@@ -2,8 +2,8 @@ import Image from "next/image";
 import { MobileNav } from "./components/MobileNav";
 import { WaButton } from "./components/WaButton";
 
-const WA_NUMBER = "393395478679";
-const WA_MSG = encodeURIComponent("Hola! Me interesa el servicio de actualización A.I.R.E. 🇮🇹");
+const WA_NUMBER = "5493442558765";
+const WA_MSG = encodeURIComponent("Hola! Me interesa el servicio de actualizacion A.I.R.E.");
 const WA_URL = `https://wa.me/${WA_NUMBER}?text=${WA_MSG}`;
 
 const PROBLEMAS = [
