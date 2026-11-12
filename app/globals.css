@@ -3,12 +3,12 @@
 :root {
   --font-display: var(--font-playfair), Georgia, serif;
   --font-logo: var(--font-hurricane), cursive;
-  --red: #C21718;
-  --dark-red: #75141C;
-  --green: #155728;
-  --dark-green: #042D15;
-  --cream: #F7E7D8;
-  --tan: #D9BCA7;
+  --red: #E02632;
+  --dark-red: #B0182A;
+  --green: #0B703E;
+  --dark-green: #0A5A35;
+  --cream: #FCF6EE;
+  --tan: #F1DDC7;
 }
 
 * { box-sizing: border-box; }

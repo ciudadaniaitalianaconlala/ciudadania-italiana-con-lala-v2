@@ -112,7 +112,7 @@ export default function Home() {
         style={{
           backdropFilter: "blur(18px)",
           WebkitBackdropFilter: "blur(18px)",
-          background: "rgba(247,231,216,0.88)",
+          background: "rgba(252,246,238,0.88)",
           borderColor: "var(--tan)",
         }}
       >
@@ -177,7 +177,7 @@ export default function Home() {
           className="relative overflow-hidden px-6 pt-16 pb-20 md:py-28"
           style={{
             background:
-              "radial-gradient(ellipse 120% 70% at 75% -10%, rgba(194,23,24,0.6) 0%, transparent 55%), radial-gradient(ellipse 80% 60% at 15% 110%, rgba(4,45,21,0.45) 0%, transparent 50%), var(--dark-red)",
+              "radial-gradient(ellipse 120% 70% at 75% -10%, rgba(224,38,50,0.6) 0%, transparent 55%), radial-gradient(ellipse 80% 60% at 15% 110%, rgba(10,90,53,0.45) 0%, transparent 50%), var(--dark-red)",
             color: "var(--cream)",
           }}
         >
@@ -186,8 +186,8 @@ export default function Home() {
               <span
                 className="inline-flex items-center gap-2 rounded-full px-4 py-1.5 text-sm font-semibold mb-7"
                 style={{
-                  background: "rgba(247,231,216,0.1)",
-                  border: "1px solid rgba(247,231,216,0.22)",
+                  background: "rgba(252,246,238,0.1)",
+                  border: "1px solid rgba(252,246,238,0.22)",
                   color: "var(--tan)",
                 }}
               >
@@ -198,7 +198,7 @@ export default function Home() {
                 className="mb-7"
                 style={{
                   fontFamily: "var(--font-display)",
-                  fontSize: "clamp(2.6rem, 7.5vw, 6.2rem)",
+                  fontSize: "clamp(2.6rem, 6vw, 5rem)",
                   lineHeight: 0.97,
                 }}
               >
@@ -231,7 +231,7 @@ export default function Home() {
                   href="#precios"
                   className="inline-flex items-center gap-2 rounded-full px-7 py-3.5 text-base font-semibold transition-colors duration-200 hover:bg-white/10"
                   style={{
-                    border: "1.5px solid rgba(247,231,216,0.35)",
+                    border: "1.5px solid rgba(252,246,238,0.35)",
                     color: "var(--cream)",
                   }}
                 >
@@ -257,7 +257,7 @@ export default function Home() {
                 preload
                 sizes="(min-width: 768px) 40vw, 90vw"
                 className="w-full h-auto rounded-3xl"
-                style={{ boxShadow: "0 24px 60px rgba(0,0,0,0.35)", border: "1px solid rgba(247,231,216,0.18)" }}
+                style={{ boxShadow: "0 24px 60px rgba(0,0,0,0.35)", border: "1px solid rgba(252,246,238,0.18)" }}
               />
               <div
                 className="absolute -bottom-5 left-1/2 -translate-x-1/2 md:translate-x-0 md:-left-6 rounded-2xl px-5 py-3 text-sm font-semibold whitespace-nowrap"
@@ -288,7 +288,7 @@ export default function Home() {
             <div style={{ color: "var(--cream)" }}>
               <span
                 className="inline-block rounded-full px-4 py-1 text-xs font-bold mb-6 tracking-widest uppercase"
-                style={{ background: "rgba(247,231,216,0.1)", color: "var(--tan)" }}
+                style={{ background: "rgba(252,246,238,0.1)", color: "var(--tan)" }}
               >
                 Así trabajamos
               </span>
@@ -458,7 +458,7 @@ export default function Home() {
             <div>
               <span
                 className="inline-block rounded-full px-4 py-1 text-xs font-bold mb-6 tracking-widest uppercase"
-                style={{ background: "rgba(247,231,216,0.12)", color: "var(--tan)" }}
+                style={{ background: "rgba(252,246,238,0.12)", color: "var(--tan)" }}
               >
                 El servicio incluye
               </span>
@@ -481,7 +481,7 @@ export default function Home() {
                   <li
                     key={text}
                     className="flex items-center gap-4 rounded-xl px-5 py-3.5"
-                    style={{ background: "rgba(247,231,216,0.07)" }}
+                    style={{ background: "rgba(252,246,238,0.07)" }}
                   >
                     <span className="text-2xl flex-shrink-0">{icon}</span>
                     <span className="text-base">{text}</span>
@@ -647,7 +647,7 @@ export default function Home() {
             <div className="text-center mb-14">
               <span
                 className="inline-block rounded-full px-4 py-1 text-xs font-bold mb-4 tracking-widest uppercase"
-                style={{ background: "rgba(247,231,216,0.12)", color: "var(--tan)" }}
+                style={{ background: "rgba(252,246,238,0.12)", color: "var(--tan)" }}
               >
                 Clientes satisfechos
               </span>
@@ -667,11 +667,11 @@ export default function Home() {
                 <div
                   key={nombre}
                   className="rounded-2xl p-8 flex flex-col items-center text-center gap-5"
-                  style={{ background: "rgba(247,231,216,0.07)", border: "1px solid rgba(247,231,216,0.12)" }}
+                  style={{ background: "rgba(252,246,238,0.07)", border: "1px solid rgba(252,246,238,0.12)" }}
                 >
                   <div
                     className="rounded-full overflow-hidden flex-shrink-0"
-                    style={{ width: 120, height: 120, border: "3px solid rgba(247,231,216,0.25)" }}
+                    style={{ width: 120, height: 120, border: "3px solid rgba(252,246,238,0.25)" }}
                   >
                     <Image
                       src={foto}
@@ -759,7 +759,7 @@ export default function Home() {
           <div
             aria-hidden="true"
             className="absolute inset-0"
-            style={{ background: "linear-gradient(180deg, rgba(4,45,21,0.82) 0%, rgba(4,45,21,0.9) 100%)" }}
+            style={{ background: "linear-gradient(180deg, rgba(10,90,53,0.82) 0%, rgba(10,90,53,0.9) 100%)" }}
           />
           <div className="relative max-w-xl mx-auto">
             <div
@@ -875,8 +875,8 @@ export default function Home() {
         <div
           className="px-6 py-5 text-center text-xs"
           style={{
-            borderTop: "1px solid rgba(217,188,167,0.18)",
-            color: "rgba(217,188,167,0.55)",
+            borderTop: "1px solid rgba(241,221,199,0.18)",
+            color: "rgba(241,221,199,0.55)",
           }}
         >
           © {new Date().getFullYear()} Ciudadanía Italiana con Lala · Todos los derechos reservados ·
