@@ -144,8 +144,8 @@ export default function Home() {
 
           <nav className="hidden md:flex items-center gap-7 text-sm font-semibold" style={{ color: "var(--dark-red)" }}>
             <a href="#situaciones" className="hover:opacity-70 transition-opacity">Situaciones</a>
-            <a href="#servicio" className="hover:opacity-70 transition-opacity">El servicio</a>
             <a href="#nosotros" className="hover:opacity-70 transition-opacity">Nosotros</a>
+            <a href="#servicio" className="hover:opacity-70 transition-opacity">El servicio</a>
             <a href="#precios" className="hover:opacity-70 transition-opacity">Precios</a>
             <a href="#faq" className="hover:opacity-70 transition-opacity">FAQ</a>
           </nav>
@@ -174,7 +174,7 @@ export default function Home() {
       <main>
         {/* HERO — 2 columnas: texto + foto de Lala y José */}
         <section
-          className="relative overflow-hidden px-6 pt-16 pb-20 md:py-28"
+          className="relative overflow-hidden px-6 pt-12 pb-14 md:py-16"
           style={{
             background:
               "radial-gradient(ellipse 120% 70% at 75% -10%, rgba(208,38,47,0.4) 0%, transparent 55%), radial-gradient(ellipse 80% 60% at 15% 110%, rgba(13,74,45,0.4) 0%, transparent 50%), var(--dark-red)",
@@ -198,7 +198,7 @@ export default function Home() {
                 className="mb-7"
                 style={{
                   fontFamily: "var(--font-display)",
-                  fontSize: "clamp(2.6rem, 6vw, 5rem)",
+                  fontSize: "clamp(2.6rem, 5.5vw, 4.5rem)",
                   lineHeight: 0.97,
                 }}
               >
@@ -269,10 +269,102 @@ export default function Home() {
           </div>
         </section>
 
-        {/* VIDEO */}
-        <section className="px-6 py-20" style={{ background: "var(--paper)" }}>
-          <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-12 items-center">
-            {/* Columna izquierda: video */}
+        {/* SITUACIONES — compacto */}
+        <section id="situaciones" className="px-6 py-14 md:py-16" style={{ background: "var(--cream)" }}>
+          <div className="max-w-5xl mx-auto">
+            <div className="text-center mb-8">
+              <span
+                className="inline-block rounded-full px-4 py-1 text-xs font-bold mb-4 tracking-widest uppercase"
+                style={{ background: "var(--tan)", color: "var(--dark-red)" }}
+              >
+                Situaciones comunes
+              </span>
+              <h2
+                style={{
+                  fontFamily: "var(--font-display)",
+                  fontSize: "clamp(2rem, 4.5vw, 3rem)",
+                  color: "var(--dark-red)",
+                  lineHeight: 1.1,
+                }}
+              >
+                ¿Te identificás con alguna de estas situaciones?
+              </h2>
+            </div>
+
+            <div className="grid md:grid-cols-3 gap-4">
+              {/* Pasaporte — destacada */}
+              <div
+                className="md:col-span-2 rounded-2xl overflow-hidden grid sm:grid-cols-[1fr_180px]"
+                style={{ background: "var(--dark-red)", color: "var(--cream)" }}
+              >
+                <div className="p-6 flex flex-col gap-3">
+                  <h3 className="font-bold text-xl">🛂 Pasaporte bloqueado</h3>
+                  <p className="text-[15px] leading-[1.7]" style={{ color: "var(--tan)" }}>
+                    ¿Necesitás tramitar o actualizar tu pasaporte italiano? Primero debés estar
+                    correctamente inscripto en el A.I.R.E.
+                  </p>
+                  <WaButton href={WA_URL} size="sm" className="self-start mt-1">
+                    Resolver esto →
+                  </WaButton>
+                </div>
+                <div className="relative h-48 sm:h-auto">
+                  <Image
+                    src="/img/pasaporte.webp"
+                    alt="Pasaporte italiano en mano"
+                    fill
+                    sizes="(min-width: 640px) 180px, 100vw"
+                    className="object-cover"
+                    style={{ objectPosition: "50% 45%" }}
+                  />
+                </div>
+              </div>
+
+              {/* Multa */}
+              <div
+                className="rounded-2xl p-6 flex flex-col justify-between gap-4"
+                style={{ background: "var(--green)", color: "var(--cream)" }}
+              >
+                <p className="font-bold tracking-wide text-sm uppercase" style={{ color: "var(--tan)" }}>
+                  Multa máxima
+                </p>
+                <div>
+                  <p style={{ fontFamily: "var(--font-display)", fontSize: "3.2rem", lineHeight: 1 }}>
+                    €5.000
+                  </p>
+                  <p className="text-sm mt-2" style={{ color: "var(--tan)" }}>
+                    por 5 años sin inscripción en el A.I.R.E.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* 4 situaciones — compactas */}
+            <div className="grid sm:grid-cols-2 gap-4 mt-4">
+              {PROBLEMAS.map(({ emoji, titulo, texto }) => (
+                <div
+                  key={titulo}
+                  className="rounded-2xl p-5 flex gap-4"
+                  style={{ background: "var(--paper)", border: "1.5px solid var(--tan)" }}
+                >
+                  <span className="text-2xl leading-none flex-shrink-0 mt-0.5">{emoji}</span>
+                  <div>
+                    <h3 className="font-bold text-base mb-1" style={{ color: "var(--dark-red)" }}>
+                      {titulo}
+                    </h3>
+                    <p className="text-[15px] leading-[1.65]" style={{ color: "var(--ink-soft)" }}>
+                      {texto}
+                    </p>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+          </div>
+        </section>
+
+        {/* QUIÉNES SOMOS — video + presentación */}
+        <section id="nosotros" className="px-6 py-14 md:py-16" style={{ background: "var(--paper)" }}>
+          <div className="max-w-5xl mx-auto grid md:grid-cols-[0.85fr_1.15fr] gap-10 md:gap-12 items-center">
             <video
               controls
               playsInline
@@ -284,358 +376,134 @@ export default function Home() {
               <source src="/video-lala.mp4" type="video/mp4" />
             </video>
 
-            {/* Columna derecha: texto */}
             <div>
               <span
-                className="inline-block rounded-full px-4 py-1 text-xs font-bold mb-6 tracking-widest uppercase"
-                style={{ background: "var(--tan)", color: "var(--dark-red)" }}
-              >
-                Así trabajamos
-              </span>
-              <h2
-                className="mb-6"
-                style={{
-                  fontFamily: "var(--font-display)",
-                  fontSize: "clamp(2.2rem, 5vw, 3.5rem)",
-                  lineHeight: 1.05,
-                  color: "var(--dark-red)",
-                }}
-              >
-                Te guiamos paso a paso.
-              </h2>
-              <p className="text-base leading-relaxed mb-4" style={{ color: "var(--ink-soft)" }}>
-                El sistema consular italiano es confuso, lleno de formularios en otro idioma y pasos
-                que no están explicados en ningún lado. Es normal perderse — no es culpa tuya.
-              </p>
-              <p className="text-base leading-relaxed mb-8" style={{ color: "var(--ink-soft)" }}>
-                Con años de experiencia resolviendo estos trámites, sabemos exactamente qué piden,
-                cómo presentarlo y cómo evitar los errores más comunes.
-              </p>
-              <WaButton href={WA_URL} size="md">Empezar ahora</WaButton>
-            </div>
-          </div>
-        </section>
-
-        {/* PROBLEMAS — bento grid, ventogridz pattern */}
-        <section id="situaciones" className="px-6 py-24" style={{ background: "var(--cream)" }}>
-          <div className="max-w-5xl mx-auto">
-            <div className="text-center mb-14">
-              <span
-                className="inline-block rounded-full px-4 py-1 text-xs font-bold mb-4 tracking-widest uppercase"
-                style={{ background: "var(--tan)", color: "var(--dark-red)" }}
-              >
-                Situaciones comunes
-              </span>
-              <h2
-                style={{
-                  fontFamily: "var(--font-display)",
-                  fontSize: "clamp(2rem, 5vw, 3.5rem)",
-                  color: "var(--dark-red)",
-                  lineHeight: 1.1,
-                }}
-              >
-                ¿Te identificás con alguna<br />de estas situaciones?
-              </h2>
-            </div>
-
-            {/* Bento grid — 6 col, mixed sizes */}
-            <div className="grid grid-cols-6 gap-4">
-              {/* Hero card — pasaporte, spans all 6 on mobile, 6 on desktop (full highlight card) */}
-              <div
-                className="col-span-6 md:col-span-4 rounded-2xl overflow-hidden grid sm:grid-cols-[1fr_200px]"
-                style={{
-                  background: "var(--dark-red)",
-                  color: "var(--cream)",
-                }}
-              >
-                <div className="p-7 flex flex-col gap-4">
-                  <span className="text-4xl">🛂</span>
-                  <div>
-                    <h3 className="font-bold text-2xl mb-2">Pasaporte bloqueado</h3>
-                    <p className="text-base leading-relaxed" style={{ color: "var(--tan)" }}>
-                      ¿Necesitás tramitar o actualizar tu pasaporte italiano? Primero debés estar
-                      correctamente inscripto en el A.I.R.E.
-                    </p>
-                  </div>
-                  <WaButton href={WA_URL} size="sm" className="self-start mt-2">
-                    Resolver esto →
-                  </WaButton>
-                </div>
-                <div className="relative h-56 sm:h-auto">
-                  <Image
-                    src="/img/pasaporte.webp"
-                    alt="Pasaporte italiano en mano"
-                    fill
-                    sizes="(min-width: 640px) 200px, 100vw"
-                    className="object-cover"
-                    style={{ objectPosition: "50% 45%" }}
-                  />
-                </div>
-              </div>
-
-              {/* Side card — stat/fact */}
-              <div
-                className="col-span-6 md:col-span-2 rounded-2xl p-7 flex flex-col justify-between"
-                style={{ background: "var(--green)", color: "var(--cream)" }}
-              >
-                <p
-                  className="font-bold tracking-wide text-sm uppercase"
-                  style={{ color: "var(--tan)" }}
-                >
-                  Multa máxima
-                </p>
-                <div>
-                  <p
-                    style={{
-                      fontFamily: "var(--font-display)",
-                      fontSize: "3.5rem",
-                      lineHeight: 1,
-                    }}
-                  >
-                    €5.000
-                  </p>
-                  <p className="text-sm mt-2" style={{ color: "var(--tan)" }}>
-                    por 5 años sin inscripción en el A.I.R.E.
-                  </p>
-                </div>
-              </div>
-
-              {/* 4 problem cards — half width on desktop */}
-              {PROBLEMAS.map(({ emoji, titulo, texto }) => (
-                <div
-                  key={titulo}
-                  className="col-span-6 md:col-span-3 rounded-2xl p-6 flex flex-col gap-3"
-                  style={{
-                    background: "var(--paper)",
-                    border: "1.5px solid var(--tan)",
-                    boxShadow: "0 2px 12px rgba(0,0,0,0.04)",
-                  }}
-                >
-                  <span className="text-3xl">{emoji}</span>
-                  <h3 className="font-bold text-lg" style={{ color: "var(--dark-red)" }}>
-                    {titulo}
-                  </h3>
-                  <p className="text-[15px] leading-[1.7]" style={{ color: "var(--ink-soft)" }}>
-                    {texto}
-                  </p>
-                </div>
-              ))}
-
-              {/* CTA card — full width */}
-              <div
-                className="col-span-6 rounded-2xl p-7 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-5"
-                style={{ background: "var(--dark-green)", color: "var(--cream)" }}
-              >
-                <div>
-                  <p className="font-bold text-lg mb-1">¿No sabés si tu situación está ok?</p>
-                  <p className="text-sm" style={{ color: "var(--tan)" }}>
-                    Escribinos y revisamos tu caso sin costo ni compromiso.
-                  </p>
-                </div>
-                <WaButton href={WA_URL} size="md" className="flex-shrink-0">
-                  Consulta gratis →
-                </WaButton>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* QUÉ INCLUYE — 2-col split layout */}
-        <section
-          id="servicio"
-          className="px-6 py-24"
-          style={{ background: "var(--green)", color: "var(--cream)" }}
-        >
-          <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-12 md:gap-16 items-center">
-            <Image
-              src="/img/lala-laptop.webp"
-              alt="Lala trabajando en un trámite consular desde su computadora"
-              width={900}
-              height={1125}
-              sizes="(min-width: 768px) 460px, 100vw"
-              className="w-full h-auto rounded-3xl"
-              style={{ boxShadow: "0 20px 50px rgba(0,0,0,0.3)" }}
-            />
-            <div>
-              <span
-                className="inline-block rounded-full px-4 py-1 text-xs font-bold mb-6 tracking-widest uppercase"
-                style={{ background: "rgba(252,246,238,0.12)", color: "var(--tan)" }}
-              >
-                El servicio incluye
-              </span>
-              <h2
-                className="mb-5"
-                style={{
-                  fontFamily: "var(--font-display)",
-                  fontSize: "clamp(2rem, 4.5vw, 3.2rem)",
-                  lineHeight: 1.1,
-                }}
-              >
-                Acompañamiento completo, de principio a fin
-              </h2>
-              <p className="text-base leading-relaxed mb-8" style={{ color: "var(--tan)" }}>
-                No te dejamos solo con el portal. Una persona real te guía en cada paso hasta que
-                tu situación consular quede confirmada.
-              </p>
-              <ul className="space-y-3 mb-8">
-                {INCLUYE.map(({ icon, text }) => (
-                  <li
-                    key={text}
-                    className="flex items-center gap-4 rounded-xl px-5 py-3.5"
-                    style={{ background: "rgba(252,246,238,0.07)" }}
-                  >
-                    <span className="text-2xl flex-shrink-0">{icon}</span>
-                    <span className="text-base">{text}</span>
-                  </li>
-                ))}
-              </ul>
-              <WaButton href={WA_URL} size="md">Empezar ahora</WaButton>
-            </div>
-          </div>
-        </section>
-
-        {/* QUIÉNES SOMOS — Lala y José */}
-        <section id="nosotros" className="px-6 py-24" style={{ background: "var(--paper)" }}>
-          <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-12 md:gap-16 items-center">
-            <div className="grid grid-cols-2 gap-4">
-              <Image
-                src="/img/lala-jose-taormina.webp"
-                alt="Lala y José en Taormina"
-                width={1600}
-                height={1067}
-                sizes="(min-width: 768px) 460px, 100vw"
-                className="col-span-2 w-full h-auto rounded-2xl"
-              />
-              <Image
-                src="/img/lala-retrato.webp"
-                alt="Retrato de Lala"
-                width={900}
-                height={1200}
-                sizes="(min-width: 768px) 225px, 50vw"
-                className="w-full h-auto rounded-2xl"
-              />
-              <Image
-                src="/img/lala-jose-guia.webp"
-                alt="Lala y José revisando una guía"
-                width={900}
-                height={1200}
-                sizes="(min-width: 768px) 225px, 50vw"
-                className="w-full h-auto rounded-2xl"
-              />
-            </div>
-
-            <div>
-              <span
-                className="inline-block rounded-full px-4 py-1 text-xs font-bold mb-6 tracking-widest uppercase"
+                className="inline-block rounded-full px-4 py-1 text-xs font-bold mb-5 tracking-widest uppercase"
                 style={{ background: "var(--tan)", color: "var(--dark-red)" }}
               >
                 Quiénes somos
               </span>
               <h2
-                className="mb-6"
+                className="mb-5"
                 style={{
                   fontFamily: "var(--font-display)",
-                  fontSize: "clamp(2.2rem, 5vw, 3.5rem)",
+                  fontSize: "clamp(2.2rem, 4.5vw, 3.2rem)",
                   color: "var(--dark-red)",
                   lineHeight: 1.05,
                 }}
               >
                 Somos Lala y José
               </h2>
-              <p className="text-base leading-relaxed mb-4" style={{ color: "var(--ink-soft)" }}>
+              <p className="text-base leading-[1.7] mb-4" style={{ color: "var(--ink-soft)" }}>
                 Detrás de este servicio no hay un call center ni un bot: somos nosotros. Te respondemos
                 personalmente por WhatsApp, revisamos tu caso y te acompañamos en cada paso del trámite.
               </p>
-              <p className="text-base leading-relaxed mb-8" style={{ color: "var(--ink-soft)" }}>
-                Conocemos el sistema consular italiano y los errores que más se repiten en FAST IT,
-                para que vos no tengas que aprenderlos a los golpes.
+              <p className="text-base leading-[1.7] mb-6" style={{ color: "var(--ink-soft)" }}>
+                El sistema consular italiano es confuso y está lleno de pasos que no se explican en
+                ningún lado. Es normal perderse — no es culpa tuya. Conocemos los errores que más se
+                repiten en FAST IT, para que vos no tengas que aprenderlos a los golpes.
               </p>
+              <div className="grid grid-cols-3 gap-3 mb-7">
+                {[
+                  ["/img/lala-jose-taormina.webp", "Lala y José en Taormina", "50% 30%"],
+                  ["/img/lala-retrato.webp", "Retrato de Lala", "50% 35%"],
+                  ["/img/lala-jose-guia.webp", "Lala y José revisando una guía", "50% 35%"],
+                ].map(([src, alt, pos]) => (
+                  <div key={src} className="relative aspect-[4/3] rounded-xl overflow-hidden">
+                    <Image src={src} alt={alt} fill sizes="150px" className="object-cover" style={{ objectPosition: pos }} />
+                  </div>
+                ))}
+              </div>
               <WaButton href={WA_URL} size="md">Hablar con nosotros</WaButton>
             </div>
           </div>
         </section>
 
-        {/* PRECIOS */}
-        <section id="precios" className="px-6 py-24" style={{ background: "var(--cream)" }}>
-          <div className="max-w-4xl mx-auto">
-
-            <div className="grid md:grid-cols-2 gap-12 items-center">
-              {/* Plan Base */}
-              <div
-                className="rounded-2xl p-10 flex flex-col"
-                style={{ border: "2px solid var(--tan)", background: "var(--paper)" }}
+        {/* SERVICIO + PRECIO */}
+        <section
+          id="servicio"
+          className="px-6 py-14 md:py-16"
+          style={{ background: "var(--green)", color: "var(--cream)" }}
+        >
+          <div id="precios" className="max-w-5xl mx-auto grid md:grid-cols-[1.1fr_0.9fr] gap-10 md:gap-14 items-center scroll-mt-24">
+            <div>
+              <span
+                className="inline-block rounded-full px-4 py-1 text-xs font-bold mb-5 tracking-widest uppercase"
+                style={{ background: "rgba(244,235,224,0.12)", color: "var(--tan)" }}
               >
-                <div className="mb-8">
-                  <p className="text-xs font-bold tracking-widest uppercase mb-3" style={{ color: "var(--green)" }}>
-                    Servicio de acompañamiento
-                  </p>
-                  <div className="flex items-end gap-2">
-                    <span
-                      style={{
-                        fontFamily: "var(--font-display)",
-                        fontSize: "4.5rem",
-                        color: "var(--dark-red)",
-                        lineHeight: 1,
-                      }}
-                    >
-                      €120
-                    </span>
-                    <span className="text-sm pb-2" style={{ color: "var(--ink-muted)" }}>
-                      pago único
-                    </span>
-                  </div>
-                  <p className="text-sm mt-3 leading-relaxed" style={{ color: "var(--ink-soft)" }}>
-                    Todo lo que necesitás para actualizar tu situación A.I.R.E. sin complicaciones.
-                  </p>
-                </div>
+                El servicio incluye
+              </span>
+              <h2
+                className="mb-4"
+                style={{
+                  fontFamily: "var(--font-display)",
+                  fontSize: "clamp(2rem, 4.5vw, 3rem)",
+                  lineHeight: 1.1,
+                }}
+              >
+                Acompañamiento completo, de principio a fin
+              </h2>
+              <p className="text-base leading-[1.7] mb-6" style={{ color: "var(--tan)" }}>
+                No te dejamos solo con el portal. Una persona real te guía en cada paso hasta que
+                tu situación consular quede confirmada.
+              </p>
+              <ul className="space-y-2.5">
+                {INCLUYE.map(({ icon, text }) => (
+                  <li
+                    key={text}
+                    className="flex items-center gap-4 rounded-xl px-4 py-2.5"
+                    style={{ background: "rgba(244,235,224,0.07)" }}
+                  >
+                    <span className="text-xl flex-shrink-0">{icon}</span>
+                    <span className="text-base">{text}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
 
-                <ul className="space-y-4 text-sm flex-1 mb-10">
-                  {[
-                    "Verificación de tu situación actual",
-                    "Checklist para la preparación de los documentos necesarios",
-                    "Asistencia por WhatsApp para cargar en FAST IT",
-                    "Videollamada de acompañamiento",
-                    "Seguimiento hasta confirmación oficial",
-                  ].map((item) => (
-                    <li key={item} className="flex items-center gap-3" style={{ color: "var(--ink-soft)" }}>
-                      <span
-                        className="flex-shrink-0 w-5 h-5 rounded-full flex items-center justify-center text-xs font-bold"
-                        style={{ border: "1.5px solid var(--green)", color: "var(--green)" }}
-                      >
-                        ✓
-                      </span>
-                      {item}
-                    </li>
-                  ))}
-                </ul>
+            {/* Tarjeta de precio */}
+            <div
+              className="rounded-3xl overflow-hidden"
+              style={{ background: "var(--paper)", color: "var(--ink)", boxShadow: "0 20px 50px rgba(0,0,0,0.25)" }}
+            >
+              <div className="relative h-36">
+                <Image
+                  src="/img/lala-laptop.webp"
+                  alt="Lala trabajando en un trámite consular desde su computadora"
+                  fill
+                  sizes="(min-width: 768px) 420px, 100vw"
+                  className="object-cover"
+                  style={{ objectPosition: "50% 55%" }}
+                />
+              </div>
+              <div className="p-8">
+                <p className="text-xs font-bold tracking-widest uppercase mb-3" style={{ color: "var(--green)" }}>
+                  Servicio de acompañamiento
+                </p>
+                <div className="flex items-end gap-2 mb-3">
+                  <span
+                    style={{
+                      fontFamily: "var(--font-display)",
+                      fontSize: "4rem",
+                      color: "var(--dark-red)",
+                      lineHeight: 1,
+                    }}
+                  >
+                    €120
+                  </span>
+                  <span className="text-sm pb-2" style={{ color: "var(--ink-muted)" }}>
+                    pago único
+                  </span>
+                </div>
+                <p className="text-[15px] leading-[1.65] mb-6" style={{ color: "var(--ink-soft)" }}>
+                  Todo lo que necesitás para actualizar tu situación A.I.R.E. sin complicaciones,
+                  sin esperar meses ni lidiar con el portal solo.
+                </p>
                 <WaButton href={WA_URL} size="lg" className="w-full justify-center">
                   Empezar ahora
                 </WaButton>
-              </div>
-
-              {/* Columna derecha: texto */}
-              <div>
-                <span
-                  className="inline-block rounded-full px-4 py-1 text-xs font-bold mb-6 tracking-widest uppercase"
-                  style={{ background: "var(--tan)", color: "var(--dark-red)" }}
-                >
-                  Resultados reales
-                </span>
-                <h2
-                  className="mb-6"
-                  style={{
-                    fontFamily: "var(--font-display)",
-                    fontSize: "clamp(2.2rem, 5vw, 3.5rem)",
-                    color: "var(--dark-red)",
-                    lineHeight: 1.05,
-                  }}
-                >
-                  Con nuestro servicio, tu situación consular queda resuelta.
-                </h2>
-                <p className="text-base leading-relaxed" style={{ color: "var(--ink-soft)" }}>
-                  No hace falta esperar meses ni lidiar con el portal solo. Con nuestra guía sabés
-                  exactamente qué documentos presentar, cómo cargarlos en FAST IT y qué esperar de
-                  tu consulado.
+                <p className="text-xs text-center mt-3" style={{ color: "var(--ink-muted)" }}>
+                  Respuesta en menos de 24 hs · 100% online
                 </p>
               </div>
             </div>
@@ -643,62 +511,60 @@ export default function Home() {
         </section>
 
         {/* TESTIMONIOS */}
-        <section className="px-6 py-24" style={{ background: "var(--dark-red)", color: "var(--cream)" }}>
+        <section className="px-6 py-14 md:py-16" style={{ background: "var(--dark-red)", color: "var(--cream)" }}>
           <div className="max-w-5xl mx-auto">
-            <div className="text-center mb-14">
+            <div className="text-center mb-8">
               <span
                 className="inline-block rounded-full px-4 py-1 text-xs font-bold mb-4 tracking-widest uppercase"
-                style={{ background: "rgba(252,246,238,0.12)", color: "var(--tan)" }}
+                style={{ background: "rgba(244,235,224,0.12)", color: "var(--tan)" }}
               >
                 Clientes satisfechos
               </span>
               <h2
                 style={{
                   fontFamily: "var(--font-display)",
-                  fontSize: "clamp(2rem, 5vw, 3.5rem)",
+                  fontSize: "clamp(2rem, 4.5vw, 3rem)",
                   lineHeight: 1.1,
                 }}
               >
-                Ellos ya actualizaron<br />su A.I.R.E. con nosotros
+                Ellos ya actualizaron su A.I.R.E. con nosotros
               </h2>
             </div>
 
-            <div className="grid gap-6 md:grid-cols-3">
+            <div className="grid gap-5 md:grid-cols-3">
               {TESTIMONIOS.map(({ nombre, foto, texto }) => (
                 <div
                   key={nombre}
-                  className="rounded-2xl p-8 flex flex-col items-center text-center gap-5"
-                  style={{ background: "rgba(252,246,238,0.07)", border: "1px solid rgba(252,246,238,0.12)" }}
+                  className="rounded-2xl p-5 flex flex-col gap-3"
+                  style={{ background: "rgba(244,235,224,0.07)", border: "1px solid rgba(244,235,224,0.12)" }}
                 >
-                  <div
-                    className="rounded-full overflow-hidden flex-shrink-0"
-                    style={{ width: 120, height: 120, border: "3px solid rgba(252,246,238,0.25)" }}
-                  >
-                    <Image
-                      src={foto}
-                      alt={nombre}
-                      width={120}
-                      height={120}
-                      className="object-cover w-full h-full"
-                    />
+                  <div className="flex items-center gap-3">
+                    <div
+                      className="rounded-full overflow-hidden flex-shrink-0"
+                      style={{ width: 52, height: 52, border: "2px solid rgba(244,235,224,0.25)" }}
+                    >
+                      <Image src={foto} alt={nombre} width={52} height={52} className="object-cover w-full h-full" />
+                    </div>
+                    <div>
+                      <p className="font-bold text-sm" style={{ color: "var(--cream)" }}>
+                        {nombre} <span style={{ color: "#FBBF24" }}>★★★★★</span>
+                      </p>
+                      <p className="text-xs mt-0.5" style={{ color: "var(--tan)", opacity: 0.75 }}>Actualización de datos A.I.R.E.</p>
+                    </div>
                   </div>
-                  <p className="text-base leading-relaxed flex-1" style={{ color: "var(--tan)" }}>
+                  <p className="text-[15px] leading-[1.65]" style={{ color: "var(--tan)" }}>
                     &ldquo;{texto}&rdquo;
                   </p>
-                  <div>
-                    <p className="font-bold text-sm" style={{ color: "var(--cream)" }}>{nombre}</p>
-                    <p className="text-xs mt-1" style={{ color: "var(--tan)", opacity: 0.75 }}>Actualización de datos A.I.R.E.</p>
-                  </div>
                 </div>
               ))}
             </div>
           </div>
         </section>
 
-        {/* FAQ */}
-        <section id="faq" className="px-6 py-24" style={{ background: "var(--tan)" }}>
-          <div className="max-w-2xl mx-auto">
-            <div className="text-center mb-14">
+        {/* FAQ — 2 columnas en escritorio */}
+        <section id="faq" className="px-6 py-14 md:py-16" style={{ background: "var(--tan)" }}>
+          <div className="max-w-5xl mx-auto">
+            <div className="text-center mb-8">
               <span
                 className="inline-block rounded-full px-4 py-1 text-xs font-bold mb-4 tracking-widest uppercase"
                 style={{ background: "var(--paper)", color: "var(--dark-red)" }}
@@ -708,7 +574,7 @@ export default function Home() {
               <h2
                 style={{
                   fontFamily: "var(--font-display)",
-                  fontSize: "clamp(2rem, 5vw, 3.5rem)",
+                  fontSize: "clamp(2rem, 4.5vw, 3rem)",
                   color: "var(--dark-red)",
                 }}
               >
@@ -716,7 +582,7 @@ export default function Home() {
               </h2>
             </div>
 
-            <div className="space-y-2">
+            <div className="grid md:grid-cols-2 gap-3 items-start">
               {FAQS.map(({ q, a }) => (
                 <details
                   key={q}
@@ -746,7 +612,7 @@ export default function Home() {
 
         {/* CTA FINAL — cta.gallery: centered, stars, single button, trust microcopy */}
         <section
-          className="relative overflow-hidden px-6 py-32 text-center"
+          className="relative overflow-hidden px-6 py-14 md:py-16 text-center"
           style={{ background: "var(--dark-green)", color: "var(--cream)" }}
         >
           <Image
@@ -762,9 +628,9 @@ export default function Home() {
             className="absolute inset-0"
             style={{ background: "linear-gradient(180deg, rgba(13,74,45,0.84) 0%, rgba(13,74,45,0.92) 100%)" }}
           />
-          <div className="relative max-w-xl mx-auto">
+          <div className="relative max-w-2xl mx-auto">
             <div
-              className="inline-flex items-center gap-1 mb-5 text-sm font-medium"
+              className="inline-flex items-center gap-1 mb-3 text-sm font-medium"
               style={{ color: "var(--tan)" }}
             >
               <span style={{ color: "#FBBF24", letterSpacing: "0.08em" }}>★★★★★</span>
@@ -775,19 +641,19 @@ export default function Home() {
               className="mb-6"
               style={{
                 fontFamily: "var(--font-display)",
-                fontSize: "clamp(2.8rem, 8vw, 6rem)",
+                fontSize: "clamp(2.1rem, 4.5vw, 3.4rem)",
                 lineHeight: 0.97,
               }}
             >
               Regularizá tu ciudadanía hoy mismo
             </h2>
 
-            <p className="mb-10 text-lg leading-relaxed" style={{ color: "var(--tan)" }}>
+            <p className="mb-7 text-lg leading-relaxed" style={{ color: "var(--tan)" }}>
               Una consulta rápida puede ahorrarte meses de demoras, trámites mal hechos y multas
               evitables.
             </p>
 
-            <WaButton href={WA_URL} size="lg" className="mb-5">
+            <WaButton href={WA_URL} size="lg" className="mb-4">
               Escribir por WhatsApp ahora
             </WaButton>
 
@@ -800,7 +666,7 @@ export default function Home() {
 
       {/* FOOTER — footers.design: 3-col, divider, copyright */}
       <footer style={{ background: "var(--dark-red)", color: "var(--tan)" }}>
-        <div className="max-w-5xl mx-auto px-6 py-14 grid gap-10 sm:grid-cols-3">
+        <div className="max-w-5xl mx-auto px-6 py-10 grid gap-8 sm:grid-cols-3">
           {/* Col 1: Brand */}
           <div>
             <div className="flex items-center gap-3 mb-4">
@@ -832,11 +698,11 @@ export default function Home() {
             <p className="text-xs font-bold tracking-widest uppercase mb-5" style={{ color: "var(--cream)" }}>
               Información
             </p>
-            <ul className="space-y-3 text-sm">
+            <ul className="space-y-2 text-sm">
               {[
                 ["Situaciones comunes", "#situaciones"],
-                ["El servicio", "#servicio"],
                 ["Quiénes somos", "#nosotros"],
+                ["El servicio", "#servicio"],
                 ["Precios", "#precios"],
                 ["Preguntas frecuentes", "#faq"],
               ].map(([label, href]) => (

@@ -5,8 +5,8 @@ import { WaButton } from "./WaButton";
 
 const NAV_LINKS = [
   ["Situaciones", "#situaciones"],
-  ["El servicio", "#servicio"],
   ["Nosotros", "#nosotros"],
+  ["El servicio", "#servicio"],
   ["Precios", "#precios"],
   ["FAQ", "#faq"],
 ] as const;
