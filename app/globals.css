@@ -3,19 +3,23 @@
 :root {
   --font-display: var(--font-playfair), Georgia, serif;
   --font-logo: var(--font-hurricane), cursive;
-  --red: #E02632;
-  --dark-red: #B0182A;
-  --green: #0B703E;
-  --dark-green: #0A5A35;
-  --cream: #FCF6EE;
-  --tan: #F1DDC7;
+  --red: #D0262F;
+  --dark-red: #8C1D27;
+  --green: #11633A;
+  --dark-green: #0D4A2D;
+  --cream: #F4EBE0;
+  --tan: #E8D5C1;
+  --paper: #FBF6EF;
+  --ink: #2F2421;
+  --ink-soft: #5B4A43;
+  --ink-muted: #75625A;
 }
 
 * { box-sizing: border-box; }
 
 body {
   background: var(--cream);
-  color: #1a1a1a;
+  color: var(--ink);
   font-family: var(--font-body), system-ui, sans-serif;
   -webkit-font-smoothing: antialiased;
 }

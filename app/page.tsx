@@ -112,7 +112,7 @@ export default function Home() {
         style={{
           backdropFilter: "blur(18px)",
           WebkitBackdropFilter: "blur(18px)",
-          background: "rgba(252,246,238,0.88)",
+          background: "rgba(244,235,224,0.9)",
           borderColor: "var(--tan)",
         }}
       >
@@ -177,7 +177,7 @@ export default function Home() {
           className="relative overflow-hidden px-6 pt-16 pb-20 md:py-28"
           style={{
             background:
-              "radial-gradient(ellipse 120% 70% at 75% -10%, rgba(224,38,50,0.6) 0%, transparent 55%), radial-gradient(ellipse 80% 60% at 15% 110%, rgba(10,90,53,0.45) 0%, transparent 50%), var(--dark-red)",
+              "radial-gradient(ellipse 120% 70% at 75% -10%, rgba(208,38,47,0.4) 0%, transparent 55%), radial-gradient(ellipse 80% 60% at 15% 110%, rgba(13,74,45,0.4) 0%, transparent 50%), var(--dark-red)",
             color: "var(--cream)",
           }}
         >
@@ -270,7 +270,7 @@ export default function Home() {
         </section>
 
         {/* VIDEO */}
-        <section className="px-6 py-20" style={{ background: "var(--dark-green)" }}>
+        <section className="px-6 py-20" style={{ background: "var(--paper)" }}>
           <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-12 items-center">
             {/* Columna izquierda: video */}
             <video
@@ -279,16 +279,16 @@ export default function Home() {
               preload="none"
               poster="/img/video-poster.webp"
               className="rounded-2xl w-full"
-              style={{ boxShadow: "0 8px 40px rgba(0,0,0,0.4)", aspectRatio: "1/1" }}
+              style={{ boxShadow: "0 12px 40px rgba(47,36,33,0.18)", aspectRatio: "1/1" }}
             >
               <source src="/video-lala.mp4" type="video/mp4" />
             </video>
 
             {/* Columna derecha: texto */}
-            <div style={{ color: "var(--cream)" }}>
+            <div>
               <span
                 className="inline-block rounded-full px-4 py-1 text-xs font-bold mb-6 tracking-widest uppercase"
-                style={{ background: "rgba(252,246,238,0.1)", color: "var(--tan)" }}
+                style={{ background: "var(--tan)", color: "var(--dark-red)" }}
               >
                 Así trabajamos
               </span>
@@ -298,15 +298,16 @@ export default function Home() {
                   fontFamily: "var(--font-display)",
                   fontSize: "clamp(2.2rem, 5vw, 3.5rem)",
                   lineHeight: 1.05,
+                  color: "var(--dark-red)",
                 }}
               >
                 Te guiamos paso a paso.
               </h2>
-              <p className="text-base leading-relaxed mb-4" style={{ color: "var(--tan)" }}>
+              <p className="text-base leading-relaxed mb-4" style={{ color: "var(--ink-soft)" }}>
                 El sistema consular italiano es confuso, lleno de formularios en otro idioma y pasos
                 que no están explicados en ningún lado. Es normal perderse — no es culpa tuya.
               </p>
-              <p className="text-base leading-relaxed mb-8" style={{ color: "var(--tan)" }}>
+              <p className="text-base leading-relaxed mb-8" style={{ color: "var(--ink-soft)" }}>
                 Con años de experiencia resolviendo estos trámites, sabemos exactamente qué piden,
                 cómo presentarlo y cómo evitar los errores más comunes.
               </p>
@@ -405,7 +406,7 @@ export default function Home() {
                   key={titulo}
                   className="col-span-6 md:col-span-3 rounded-2xl p-6 flex flex-col gap-3"
                   style={{
-                    background: "white",
+                    background: "var(--paper)",
                     border: "1.5px solid var(--tan)",
                     boxShadow: "0 2px 12px rgba(0,0,0,0.04)",
                   }}
@@ -414,7 +415,7 @@ export default function Home() {
                   <h3 className="font-bold text-lg" style={{ color: "var(--dark-red)" }}>
                     {titulo}
                   </h3>
-                  <p className="text-sm leading-relaxed" style={{ color: "#555" }}>
+                  <p className="text-[15px] leading-[1.7]" style={{ color: "var(--ink-soft)" }}>
                     {texto}
                   </p>
                 </div>
@@ -494,7 +495,7 @@ export default function Home() {
         </section>
 
         {/* QUIÉNES SOMOS — Lala y José */}
-        <section id="nosotros" className="px-6 py-24" style={{ background: "#fff" }}>
+        <section id="nosotros" className="px-6 py-24" style={{ background: "var(--paper)" }}>
           <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-12 md:gap-16 items-center">
             <div className="grid grid-cols-2 gap-4">
               <Image
@@ -541,11 +542,11 @@ export default function Home() {
               >
                 Somos Lala y José
               </h2>
-              <p className="text-base leading-relaxed mb-4" style={{ color: "#555" }}>
+              <p className="text-base leading-relaxed mb-4" style={{ color: "var(--ink-soft)" }}>
                 Detrás de este servicio no hay un call center ni un bot: somos nosotros. Te respondemos
                 personalmente por WhatsApp, revisamos tu caso y te acompañamos en cada paso del trámite.
               </p>
-              <p className="text-base leading-relaxed mb-8" style={{ color: "#555" }}>
+              <p className="text-base leading-relaxed mb-8" style={{ color: "var(--ink-soft)" }}>
                 Conocemos el sistema consular italiano y los errores que más se repiten en FAST IT,
                 para que vos no tengas que aprenderlos a los golpes.
               </p>
@@ -562,7 +563,7 @@ export default function Home() {
               {/* Plan Base */}
               <div
                 className="rounded-2xl p-10 flex flex-col"
-                style={{ border: "2px solid var(--tan)", background: "white" }}
+                style={{ border: "2px solid var(--tan)", background: "var(--paper)" }}
               >
                 <div className="mb-8">
                   <p className="text-xs font-bold tracking-widest uppercase mb-3" style={{ color: "var(--green)" }}>
@@ -579,11 +580,11 @@ export default function Home() {
                     >
                       €120
                     </span>
-                    <span className="text-sm pb-2" style={{ color: "#888" }}>
+                    <span className="text-sm pb-2" style={{ color: "var(--ink-muted)" }}>
                       pago único
                     </span>
                   </div>
-                  <p className="text-sm mt-3 leading-relaxed" style={{ color: "#666" }}>
+                  <p className="text-sm mt-3 leading-relaxed" style={{ color: "var(--ink-soft)" }}>
                     Todo lo que necesitás para actualizar tu situación A.I.R.E. sin complicaciones.
                   </p>
                 </div>
@@ -596,7 +597,7 @@ export default function Home() {
                     "Videollamada de acompañamiento",
                     "Seguimiento hasta confirmación oficial",
                   ].map((item) => (
-                    <li key={item} className="flex items-center gap-3" style={{ color: "#444" }}>
+                    <li key={item} className="flex items-center gap-3" style={{ color: "var(--ink-soft)" }}>
                       <span
                         className="flex-shrink-0 w-5 h-5 rounded-full flex items-center justify-center text-xs font-bold"
                         style={{ border: "1.5px solid var(--green)", color: "var(--green)" }}
@@ -631,7 +632,7 @@ export default function Home() {
                 >
                   Con nuestro servicio, tu situación consular queda resuelta.
                 </h2>
-                <p className="text-base leading-relaxed" style={{ color: "#555" }}>
+                <p className="text-base leading-relaxed" style={{ color: "var(--ink-soft)" }}>
                   No hace falta esperar meses ni lidiar con el portal solo. Con nuestra guía sabés
                   exactamente qué documentos presentar, cómo cargarlos en FAST IT y qué esperar de
                   tu consulado.
@@ -700,7 +701,7 @@ export default function Home() {
             <div className="text-center mb-14">
               <span
                 className="inline-block rounded-full px-4 py-1 text-xs font-bold mb-4 tracking-widest uppercase"
-                style={{ background: "white", color: "var(--dark-red)" }}
+                style={{ background: "var(--paper)", color: "var(--dark-red)" }}
               >
                 Preguntas frecuentes
               </span>
@@ -720,7 +721,7 @@ export default function Home() {
                 <details
                   key={q}
                   className="rounded-xl overflow-hidden"
-                  style={{ background: "white", border: "1px solid rgba(0,0,0,0.07)" }}
+                  style={{ background: "var(--paper)", border: "1px solid rgba(0,0,0,0.07)" }}
                 >
                   <summary
                     className="flex items-center justify-between gap-4 px-5 py-4 font-semibold text-base"
@@ -734,7 +735,7 @@ export default function Home() {
                       +
                     </span>
                   </summary>
-                  <div className="px-5 pb-5 pt-1 text-sm leading-relaxed" style={{ color: "#444" }}>
+                  <div className="px-5 pb-5 pt-1 text-[15px] leading-[1.7]" style={{ color: "var(--ink-soft)" }}>
                     {a}
                   </div>
                 </details>
@@ -759,7 +760,7 @@ export default function Home() {
           <div
             aria-hidden="true"
             className="absolute inset-0"
-            style={{ background: "linear-gradient(180deg, rgba(10,90,53,0.82) 0%, rgba(10,90,53,0.9) 100%)" }}
+            style={{ background: "linear-gradient(180deg, rgba(13,74,45,0.84) 0%, rgba(13,74,45,0.92) 100%)" }}
           />
           <div className="relative max-w-xl mx-auto">
             <div

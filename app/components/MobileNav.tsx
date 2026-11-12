@@ -40,7 +40,7 @@ export function MobileNav({ waUrl }: { waUrl: string }) {
           style={{
             backdropFilter: "blur(18px)",
             WebkitBackdropFilter: "blur(18px)",
-            background: "rgba(252,246,238,0.97)",
+            background: "rgba(244,235,224,0.97)",
             borderColor: "var(--tan)",
           }}
         >
