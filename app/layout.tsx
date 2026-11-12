@@ -9,6 +9,9 @@ const hurricane = Hurricane({
   weight: "400",
 });
 
+// Sitio de pruebas: sin Pixel y sin indexar. En el dominio real no hace nada.
+const STAGING_HOST = "darkorchid-goose-716069.hostingersite.com";
+
 const nunito = Nunito({
   variable: "--font-body",
   subsets: ["latin"],
@@ -31,6 +34,13 @@ export default function RootLayout({
       lang="es"
       className={`${hurricane.variable} ${nunito.variable} h-full`}
     >
+      <head>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `if(location.hostname==="${STAGING_HOST}"){var m=document.createElement("meta");m.name="robots";m.content="noindex, nofollow";document.head.appendChild(m);}`,
+          }}
+        />
+      </head>
       <body className="min-h-full flex flex-col">
         {children}
         <noscript>
@@ -44,6 +54,7 @@ export default function RootLayout({
         </noscript>
       </body>
       <Script id="meta-pixel" strategy="afterInteractive">{`
+        if (location.hostname !== "${STAGING_HOST}") {
         !function(f,b,e,v,n,t,s)
         {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
         n.callMethod.apply(n,arguments):n.queue.push(arguments)};
@@ -54,6 +65,7 @@ export default function RootLayout({
         'https://connect.facebook.net/en_US/fbevents.js');
         fbq('init', '1811647063130143');
         fbq('track', 'PageView');
+        }
       `}</Script>
     </html>
   );
