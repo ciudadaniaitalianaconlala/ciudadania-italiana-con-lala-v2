@@ -42,5 +42,6 @@ next-env.d.ts
 
 # large media files
 *.mp4
+!/public/video-lala.mp4
 *.mov
 *.webm

@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import { MobileNav } from "./components/MobileNav";
 import { WaButton } from "./components/WaButton";
 
@@ -40,17 +41,17 @@ const INCLUYE = [
 const TESTIMONIOS = [
   {
     nombre: "Agos",
-    foto: "/cliente 1.jpg",
+    foto: "/img/cliente-agos.webp",
     texto: "Hace años que necesitaba actualizar mis datos y no sabía cómo hacer. Lala me guió en todo el proceso y lo pude completar. ¡Los recomiendo!",
   },
   {
     nombre: "Valentín",
-    foto: "/cliente 2.jpg",
+    foto: "/img/cliente-valentin.webp",
     texto: "Ya me habían rechazado el trámite varias veces y con la ayuda de Lala por fin lo pudimos hacer.",
   },
   {
     nombre: "Yanina",
-    foto: "/cliente 3.jpg",
+    foto: "/img/cliente-yanina.webp",
     texto: "Hice mi ciudadanía en Italia, me mudé y tenía que cambiar mi residencia pero no sabía cómo. Los chicos me ayudaron a hacerlo y quedó todo perfecto. ¡Super recomendable!",
   },
 ];
@@ -116,14 +117,13 @@ export default function Home() {
         }}
       >
         <div className="max-w-5xl mx-auto flex items-center justify-between px-6 py-3">
-          <a href="/" className="flex items-center gap-3">
+          <Link href="/" className="flex items-center gap-3">
             <Image
-              src="/logo.jpeg"
+              src="/img/logo.webp"
               alt="Ciudadanía Italiana con Lala"
               width={44}
               height={44}
               className="rounded-full object-cover"
-              priority
             />
             <div className="leading-tight">
               <p
@@ -140,11 +140,12 @@ export default function Home() {
                 Ciudadanía Italiana
               </p>
             </div>
-          </a>
+          </Link>
 
           <nav className="hidden md:flex items-center gap-7 text-sm font-semibold" style={{ color: "var(--dark-red)" }}>
             <a href="#situaciones" className="hover:opacity-70 transition-opacity">Situaciones</a>
             <a href="#servicio" className="hover:opacity-70 transition-opacity">El servicio</a>
+            <a href="#nosotros" className="hover:opacity-70 transition-opacity">Nosotros</a>
             <a href="#precios" className="hover:opacity-70 transition-opacity">Precios</a>
             <a href="#faq" className="hover:opacity-70 transition-opacity">FAQ</a>
           </nav>
@@ -171,93 +172,101 @@ export default function Home() {
       </header>
 
       <main>
-        {/* HERO — SupaHero pattern: full-bleed, massive type, eyebrow badge, dual CTA, trust bar */}
+        {/* HERO — 2 columnas: texto + foto de Lala y José */}
         <section
-          className="relative overflow-hidden px-6 py-28 md:py-40 text-center"
+          className="relative overflow-hidden px-6 pt-16 pb-20 md:py-28"
           style={{
             background:
               "radial-gradient(ellipse 120% 70% at 75% -10%, rgba(194,23,24,0.6) 0%, transparent 55%), radial-gradient(ellipse 80% 60% at 15% 110%, rgba(4,45,21,0.45) 0%, transparent 50%), var(--dark-red)",
             color: "var(--cream)",
           }}
         >
-          {/* Eyebrow badge — h1gallery pattern */}
-          <div className="flex justify-center mb-7">
-            <span
-              className="inline-flex items-center gap-2 rounded-full px-4 py-1.5 text-sm font-semibold"
-              style={{
-                background: "rgba(247,231,216,0.1)",
-                border: "1px solid rgba(247,231,216,0.22)",
-                color: "var(--tan)",
-              }}
-            >
-              Para ciudadanos italianos en el exterior
-            </span>
+          <div className="relative max-w-6xl mx-auto grid md:grid-cols-[1.15fr_0.85fr] gap-12 md:gap-16 items-center">
+            <div className="min-w-0 text-center md:text-left">
+              <span
+                className="inline-flex items-center gap-2 rounded-full px-4 py-1.5 text-sm font-semibold mb-7"
+                style={{
+                  background: "rgba(247,231,216,0.1)",
+                  border: "1px solid rgba(247,231,216,0.22)",
+                  color: "var(--tan)",
+                }}
+              >
+                Para ciudadanos italianos en el exterior
+              </span>
+
+              <h1
+                className="mb-7"
+                style={{
+                  fontFamily: "var(--font-display)",
+                  fontSize: "clamp(2.6rem, 7.5vw, 6.2rem)",
+                  lineHeight: 0.97,
+                }}
+              >
+                ¿Tu{" "}
+                <span
+                  style={{
+                    background: "linear-gradient(135deg, #fff 0%, var(--tan) 100%)",
+                    WebkitBackgroundClip: "text",
+                    WebkitTextFillColor: "transparent",
+                    backgroundClip: "text",
+                  }}
+                >
+                  A.I.R.E.
+                </span>
+                <br />
+                está desactualizado?
+              </h1>
+
+              <p
+                className="mx-auto md:mx-0 mb-10 text-lg leading-relaxed"
+                style={{ color: "var(--tan)", maxWidth: "520px" }}
+              >
+                Si sos ciudadano/a italiano y vivís fuera de Italia, es tu obligación mantener
+                actualizado tu registro consular. Te ayudamos a resolverlo.
+              </p>
+
+              <div className="flex flex-col sm:flex-row items-center justify-center md:justify-start gap-4 mb-10">
+                <WaButton href={WA_URL} size="lg">Quiero actualizar mi A.I.R.E.</WaButton>
+                <a
+                  href="#precios"
+                  className="inline-flex items-center gap-2 rounded-full px-7 py-3.5 text-base font-semibold transition-colors duration-200 hover:bg-white/10"
+                  style={{
+                    border: "1.5px solid rgba(247,231,216,0.35)",
+                    color: "var(--cream)",
+                  }}
+                >
+                  Ver precios ↓
+                </a>
+              </div>
+
+              <div
+                className="flex flex-col sm:flex-row items-center justify-center md:justify-start gap-2 text-sm"
+                style={{ color: "var(--tan)" }}
+              >
+                <span style={{ color: "#FBBF24", fontSize: "1.1rem", letterSpacing: "0.05em" }}>★★★★★</span>
+                <span>Cientos de ciudadanos atendidos · Respuesta en menos de 24hs · 100% online</span>
+              </div>
+            </div>
+
+            <div className="relative mx-auto w-full max-w-sm md:max-w-none">
+              <Image
+                src="/img/hero-lala-jose.webp"
+                alt="Lala y José, del equipo de Ciudadanía Italiana con Lala, en un café de Taormina"
+                width={1200}
+                height={1500}
+                preload
+                sizes="(min-width: 768px) 40vw, 90vw"
+                className="w-full h-auto rounded-3xl"
+                style={{ boxShadow: "0 24px 60px rgba(0,0,0,0.35)", border: "1px solid rgba(247,231,216,0.18)" }}
+              />
+              <div
+                className="absolute -bottom-5 left-1/2 -translate-x-1/2 md:translate-x-0 md:-left-6 rounded-2xl px-5 py-3 text-sm font-semibold whitespace-nowrap"
+                style={{ background: "var(--cream)", color: "var(--dark-red)", boxShadow: "0 10px 30px rgba(0,0,0,0.25)" }}
+              >
+                👋 Te atendemos Lala y José, en persona
+              </div>
+            </div>
           </div>
-
-          {/* H1 — h1gallery: huge display, key word accented */}
-          <h1
-            className="mx-auto mb-7"
-            style={{
-              fontFamily: "var(--font-display)",
-              fontSize: "clamp(3.8rem, 11vw, 7.5rem)",
-              lineHeight: 0.97,
-              maxWidth: "860px",
-            }}
-          >
-            ¿Tu{" "}
-            <span
-              style={{
-                background: "linear-gradient(135deg, #fff 0%, var(--tan) 100%)",
-                WebkitBackgroundClip: "text",
-                WebkitTextFillColor: "transparent",
-                backgroundClip: "text",
-              }}
-            >
-              A.I.R.E.
-            </span>
-            <br />
-            está desactualizado?
-          </h1>
-
-          {/* Subheadline */}
-          <p
-            className="mx-auto mb-10 text-lg leading-relaxed"
-            style={{ color: "var(--tan)", maxWidth: "560px" }}
-          >
-            Si sos ciudadano/a italiano y vivís fuera de Italia, es tu obligación mantener
-            actualizado tu registro consular. Te ayudamos a resolverlo.
-          </p>
-
-          {/* Dual CTA — cta.gallery pattern */}
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-10">
-            <WaButton href={WA_URL} size="lg">Quiero actualizar mi A.I.R.E.</WaButton>
-            <a
-              href="#precios"
-              className="inline-flex items-center gap-2 rounded-full px-7 py-3.5 text-base font-semibold transition-colors duration-200 hover:bg-white/10"
-              style={{
-                border: "1.5px solid rgba(247,231,216,0.35)",
-                color: "var(--cream)",
-              }}
-            >
-              Ver precios ↓
-            </a>
-          </div>
-
-          {/* Trust bar */}
-          <div
-            className="flex flex-col sm:flex-row items-center justify-center gap-2 text-sm"
-            style={{ color: "var(--tan)" }}
-          >
-            <span style={{ color: "#FBBF24", fontSize: "1.1rem", letterSpacing: "0.05em" }}>★★★★★</span>
-            <span>Cientos de ciudadanos atendidos · Respuesta en menos de 24hs · 100% online</span>
-          </div>
-
-          {/* Background glow orb */}
-          <div
-            aria-hidden="true"
-            className="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2 w-[700px] h-[700px] rounded-full pointer-events-none"
-            style={{ background: "radial-gradient(circle, rgba(194,23,24,0.12) 0%, transparent 65%)" }}
-          />
         </section>
 
         {/* VIDEO */}
@@ -268,11 +277,11 @@ export default function Home() {
               controls
               playsInline
               preload="none"
-              poster="/video-poster.jpg"
+              poster="/img/video-poster.webp"
               className="rounded-2xl w-full"
               style={{ boxShadow: "0 8px 40px rgba(0,0,0,0.4)", aspectRatio: "1/1" }}
             >
-              <source src="/ciudadania%20con%20lala%20landing%20page.mp4" type="video/mp4" />
+              <source src="/video-lala.mp4" type="video/mp4" />
             </video>
 
             {/* Columna derecha: texto */}
@@ -332,23 +341,35 @@ export default function Home() {
             <div className="grid grid-cols-6 gap-4">
               {/* Hero card — pasaporte, spans all 6 on mobile, 6 on desktop (full highlight card) */}
               <div
-                className="col-span-6 md:col-span-4 rounded-2xl p-7 flex flex-col gap-4"
+                className="col-span-6 md:col-span-4 rounded-2xl overflow-hidden grid sm:grid-cols-[1fr_200px]"
                 style={{
                   background: "var(--dark-red)",
                   color: "var(--cream)",
                 }}
               >
-                <span className="text-4xl">🛂</span>
-                <div>
-                  <h3 className="font-bold text-2xl mb-2">Pasaporte bloqueado</h3>
-                  <p className="text-base leading-relaxed" style={{ color: "var(--tan)" }}>
-                    ¿Necesitás tramitar o actualizar tu pasaporte italiano? Primero debés estar
-                    correctamente inscripto en el A.I.R.E.
-                  </p>
+                <div className="p-7 flex flex-col gap-4">
+                  <span className="text-4xl">🛂</span>
+                  <div>
+                    <h3 className="font-bold text-2xl mb-2">Pasaporte bloqueado</h3>
+                    <p className="text-base leading-relaxed" style={{ color: "var(--tan)" }}>
+                      ¿Necesitás tramitar o actualizar tu pasaporte italiano? Primero debés estar
+                      correctamente inscripto en el A.I.R.E.
+                    </p>
+                  </div>
+                  <WaButton href={WA_URL} size="sm" className="self-start mt-2">
+                    Resolver esto →
+                  </WaButton>
                 </div>
-                <WaButton href={WA_URL} size="sm" className="self-start mt-2">
-                  Resolver esto →
-                </WaButton>
+                <div className="relative h-56 sm:h-auto">
+                  <Image
+                    src="/img/pasaporte.webp"
+                    alt="Pasaporte italiano en mano"
+                    fill
+                    sizes="(min-width: 640px) 200px, 100vw"
+                    className="object-cover"
+                    style={{ objectPosition: "50% 45%" }}
+                  />
+                </div>
               </div>
 
               {/* Side card — stat/fact */}
@@ -424,7 +445,16 @@ export default function Home() {
           className="px-6 py-24"
           style={{ background: "var(--green)", color: "var(--cream)" }}
         >
-          <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-16 items-center">
+          <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-12 md:gap-16 items-center">
+            <Image
+              src="/img/lala-laptop.webp"
+              alt="Lala trabajando en un trámite consular desde su computadora"
+              width={900}
+              height={1125}
+              sizes="(min-width: 768px) 460px, 100vw"
+              className="w-full h-auto rounded-3xl"
+              style={{ boxShadow: "0 20px 50px rgba(0,0,0,0.3)" }}
+            />
             <div>
               <span
                 className="inline-block rounded-full px-4 py-1 text-xs font-bold mb-6 tracking-widest uppercase"
@@ -446,21 +476,81 @@ export default function Home() {
                 No te dejamos solo con el portal. Una persona real te guía en cada paso hasta que
                 tu situación consular quede confirmada.
               </p>
+              <ul className="space-y-3 mb-8">
+                {INCLUYE.map(({ icon, text }) => (
+                  <li
+                    key={text}
+                    className="flex items-center gap-4 rounded-xl px-5 py-3.5"
+                    style={{ background: "rgba(247,231,216,0.07)" }}
+                  >
+                    <span className="text-2xl flex-shrink-0">{icon}</span>
+                    <span className="text-base">{text}</span>
+                  </li>
+                ))}
+              </ul>
               <WaButton href={WA_URL} size="md">Empezar ahora</WaButton>
             </div>
+          </div>
+        </section>
 
-            <ul className="space-y-3">
-              {INCLUYE.map(({ icon, text }) => (
-                <li
-                  key={text}
-                  className="flex items-center gap-4 rounded-xl px-5 py-4"
-                  style={{ background: "rgba(247,231,216,0.07)" }}
-                >
-                  <span className="text-2xl flex-shrink-0">{icon}</span>
-                  <span className="text-base">{text}</span>
-                </li>
-              ))}
-            </ul>
+        {/* QUIÉNES SOMOS — Lala y José */}
+        <section id="nosotros" className="px-6 py-24" style={{ background: "#fff" }}>
+          <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-12 md:gap-16 items-center">
+            <div className="grid grid-cols-2 gap-4">
+              <Image
+                src="/img/lala-jose-taormina.webp"
+                alt="Lala y José en Taormina"
+                width={1600}
+                height={1067}
+                sizes="(min-width: 768px) 460px, 100vw"
+                className="col-span-2 w-full h-auto rounded-2xl"
+              />
+              <Image
+                src="/img/lala-retrato.webp"
+                alt="Retrato de Lala"
+                width={900}
+                height={1200}
+                sizes="(min-width: 768px) 225px, 50vw"
+                className="w-full h-auto rounded-2xl"
+              />
+              <Image
+                src="/img/lala-jose-guia.webp"
+                alt="Lala y José revisando una guía"
+                width={900}
+                height={1200}
+                sizes="(min-width: 768px) 225px, 50vw"
+                className="w-full h-auto rounded-2xl"
+              />
+            </div>
+
+            <div>
+              <span
+                className="inline-block rounded-full px-4 py-1 text-xs font-bold mb-6 tracking-widest uppercase"
+                style={{ background: "var(--tan)", color: "var(--dark-red)" }}
+              >
+                Quiénes somos
+              </span>
+              <h2
+                className="mb-6"
+                style={{
+                  fontFamily: "var(--font-display)",
+                  fontSize: "clamp(2.2rem, 5vw, 3.5rem)",
+                  color: "var(--dark-red)",
+                  lineHeight: 1.05,
+                }}
+              >
+                Somos Lala y José
+              </h2>
+              <p className="text-base leading-relaxed mb-4" style={{ color: "#555" }}>
+                Detrás de este servicio no hay un call center ni un bot: somos nosotros. Te respondemos
+                personalmente por WhatsApp, revisamos tu caso y te acompañamos en cada paso del trámite.
+              </p>
+              <p className="text-base leading-relaxed mb-8" style={{ color: "#555" }}>
+                Conocemos el sistema consular italiano y los errores que más se repiten en FAST IT,
+                para que vos no tengas que aprenderlos a los golpes.
+              </p>
+              <WaButton href={WA_URL} size="md">Hablar con nosotros</WaButton>
+            </div>
           </div>
         </section>
 
@@ -656,13 +746,22 @@ export default function Home() {
         {/* CTA FINAL — cta.gallery: centered, stars, single button, trust microcopy */}
         <section
           className="relative overflow-hidden px-6 py-32 text-center"
-          style={{
-            background:
-              "radial-gradient(ellipse 100% 80% at 50% 120%, rgba(194,23,24,0.18) 0%, transparent 55%), var(--dark-green)",
-            color: "var(--cream)",
-          }}
+          style={{ background: "var(--dark-green)", color: "var(--cream)" }}
         >
-          <div className="max-w-xl mx-auto">
+          <Image
+            src="/img/cta-taormina.webp"
+            alt=""
+            fill
+            sizes="100vw"
+            className="object-cover"
+            style={{ objectPosition: "50% 60%" }}
+          />
+          <div
+            aria-hidden="true"
+            className="absolute inset-0"
+            style={{ background: "linear-gradient(180deg, rgba(4,45,21,0.82) 0%, rgba(4,45,21,0.9) 100%)" }}
+          />
+          <div className="relative max-w-xl mx-auto">
             <div
               className="inline-flex items-center gap-1 mb-5 text-sm font-medium"
               style={{ color: "var(--tan)" }}
@@ -705,7 +804,7 @@ export default function Home() {
           <div>
             <div className="flex items-center gap-3 mb-4">
               <Image
-                src="/logo.jpeg"
+                src="/img/logo.webp"
                 alt="Lala"
                 width={42}
                 height={42}
@@ -736,6 +835,7 @@ export default function Home() {
               {[
                 ["Situaciones comunes", "#situaciones"],
                 ["El servicio", "#servicio"],
+                ["Quiénes somos", "#nosotros"],
                 ["Precios", "#precios"],
                 ["Preguntas frecuentes", "#faq"],
               ].map(([label, href]) => (
@@ -781,9 +881,9 @@ export default function Home() {
         >
           © {new Date().getFullYear()} Ciudadanía Italiana con Lala · Todos los derechos reservados ·
           Servicio de asistencia online, no somos un estudio jurídico ·{" "}
-          <a href="/politica-de-privacidad" className="underline hover:opacity-80">
+          <Link href="/politica-de-privacidad" className="underline hover:opacity-80">
             Política de Privacidad
-          </a>
+          </Link>
         </div>
       </footer>
     </>

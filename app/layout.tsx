@@ -1,10 +1,17 @@
 import type { Metadata } from "next";
-import { Hurricane, Nunito } from "next/font/google";
+import { Hurricane, Nunito, Playfair_Display } from "next/font/google";
 import Script from "next/script";
+import { SITE_NAME, SITE_URL } from "./site";
 import "./globals.css";
 
 const hurricane = Hurricane({
   variable: "--font-hurricane",
+  subsets: ["latin"],
+  weight: "400",
+});
+
+const playfair = Playfair_Display({
+  variable: "--font-playfair",
   subsets: ["latin"],
   weight: "400",
 });
@@ -18,10 +25,31 @@ const nunito = Nunito({
   weight: ["400", "600", "700"],
 });
 
+const TITLE = "Ciudadanía Italiana con Lala — Actualizá tu A.I.R.E.";
+const DESCRIPTION =
+  "Asistencia online para ciudadanos italianos residentes en el exterior. Actualizá tu situación A.I.R.E. sin complicaciones, desde donde estés.";
+
 export const metadata: Metadata = {
-  title: "Ciudadanía Italiana con Lala — Actualizá tu A.I.R.E.",
-  description:
-    "Asistencia online para ciudadanos italianos residentes en el exterior. Actualizá tu situación A.I.R.E. sin complicaciones, desde donde estés.",
+  metadataBase: new URL(SITE_URL),
+  title: TITLE,
+  description: DESCRIPTION,
+  alternates: { canonical: "/" },
+  icons: { icon: "/img/logo.webp", apple: "/img/logo.webp" },
+  openGraph: {
+    type: "website",
+    locale: "es_AR",
+    siteName: SITE_NAME,
+    title: TITLE,
+    description: DESCRIPTION,
+    url: "/",
+    images: [{ url: "/img/og-image.jpg", width: 1200, height: 630, alt: "Lala y José en Taormina, Sicilia" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: TITLE,
+    description: DESCRIPTION,
+    images: ["/img/og-image.jpg"],
+  },
 };
 
 export default function RootLayout({
@@ -32,7 +60,7 @@ export default function RootLayout({
   return (
     <html
       lang="es"
-      className={`${hurricane.variable} ${nunito.variable} h-full`}
+      className={`${hurricane.variable} ${playfair.variable} ${nunito.variable} h-full`}
     >
       <head>
         <script
@@ -44,6 +72,7 @@ export default function RootLayout({
       <body className="min-h-full flex flex-col">
         {children}
         <noscript>
+          {/* eslint-disable-next-line @next/next/no-img-element -- pixel de Meta sin JS */}
           <img
             height="1"
             width="1"
