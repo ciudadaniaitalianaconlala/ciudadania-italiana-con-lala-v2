@@ -16,12 +16,12 @@ const PROBLEMAS = [
   {
     emoji: "💍",
     titulo: "Matrimonio no registrado",
-    texto: "Te casaste luego de obtener la ciudadanía y nunca lo informaste en Italia. Es tu obligación mantener tu estado civil actualizado. Este paso es necesario para que tu pareja pueda obtener la ciudadanía por matrimonio.",
+    texto: "Te casaste luego de obtener la ciudadanía y nunca lo informaste en Italia. Este paso es necesario para que tu pareja pueda obtener la ciudadanía por matrimonio.",
   },
   {
     emoji: "🏠",
     titulo: "¿Cambiaste de domicilio?",
-    texto: "Si tu dirección en el A.I.R.E. no está actualizada, podrías perderte comunicaciones importantes y tener problemas para votar o renovar tu pasaporte. Tenés un plazo legal de 90 días desde que te mudás para informar tu nuevo domicilio al consulado.",
+    texto: "Si vivís en el extranjero y te mudaste, tenés 90 días para comunicar tu nueva dirección.",
   },
   {
     emoji: "💻",
@@ -248,7 +248,7 @@ export default function Home() {
               </div>
             </div>
 
-            <div className="relative mx-auto w-full max-w-sm md:max-w-none">
+            <div className="relative mx-auto w-full hidden md:block">
               <Image
                 src="/img/hero-lala-jose.webp"
                 alt="Lala y José, del equipo de Ciudadanía Italiana con Lala, en un café de Taormina"
@@ -314,7 +314,7 @@ export default function Home() {
                     fill
                     sizes="(min-width: 640px) 180px, 100vw"
                     className="object-cover"
-                    style={{ objectPosition: "50% 45%" }}
+                    style={{ objectPosition: "50% 60%" }}
                   />
                 </div>
               </div>
@@ -401,7 +401,7 @@ export default function Home() {
               <p className="text-base leading-[1.7] mb-6" style={{ color: "var(--ink-soft)" }}>
                 El sistema consular italiano es confuso y está lleno de pasos que no se explican en
                 ningún lado. Es normal perderse — no es culpa tuya. Conocemos los errores que más se
-                repiten en FAST IT, para que vos no tengas que aprenderlos a los golpes.
+                repiten en FAST IT, para que no pierdas tiempo.
               </p>
               <div className="grid grid-cols-3 gap-3 mb-7">
                 {[
@@ -466,14 +466,14 @@ export default function Home() {
               className="rounded-3xl overflow-hidden"
               style={{ background: "var(--paper)", color: "var(--ink)", boxShadow: "0 20px 50px rgba(0,0,0,0.25)" }}
             >
-              <div className="relative h-36">
+              <div className="relative aspect-[16/9]">
                 <Image
-                  src="/img/lala-laptop.webp"
-                  alt="Lala trabajando en un trámite consular desde su computadora"
+                  src="/img/lala-videollamada.webp"
+                  alt="Lala despejando dudas de un cliente por videollamada"
                   fill
                   sizes="(min-width: 768px) 420px, 100vw"
                   className="object-cover"
-                  style={{ objectPosition: "50% 55%" }}
+                  style={{ objectPosition: "50% 40%" }}
                 />
               </div>
               <div className="p-8">
