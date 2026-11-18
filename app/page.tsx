@@ -41,17 +41,17 @@ const INCLUYE = [
 const TESTIMONIOS = [
   {
     nombre: "Agos",
-    foto: "/img/cliente-agos.webp",
+    foto: "/img/cliente-agos-cara.webp",
     texto: "Hace años que necesitaba actualizar mis datos y no sabía cómo hacer. Lala me guió en todo el proceso y lo pude completar. ¡Los recomiendo!",
   },
   {
     nombre: "Valentín",
-    foto: "/img/cliente-valentin.webp",
+    foto: "/img/cliente-valentin-cara.webp",
     texto: "Ya me habían rechazado el trámite varias veces y con la ayuda de Lala por fin lo pudimos hacer.",
   },
   {
     nombre: "Yanina",
-    foto: "/img/cliente-yanina.webp",
+    foto: "/img/cliente-yanina-cara.webp",
     texto: "Hice mi ciudadanía en Italia, me mudé y tenía que cambiar mi residencia pero no sabía cómo. Los chicos me ayudaron a hacerlo y quedó todo perfecto. ¡Super recomendable!",
   },
 ];
@@ -74,8 +74,8 @@ const FAQS = [
     a: "Sí. El nacimiento de hijos debe informarse al consulado para que el acta sea transcripta en Italia y ellos puedan acceder a la ciudadanía.",
   },
   {
-    q: "Quiero sacar el pasaporte, pero mi A.I.R.E. está mal. ¿Es un problema?",
-    a: "Sí. Muchos consulados requieren que tu situación A.I.R.E. esté actualizada antes de avanzar con el pasaporte.",
+    q: "¿Sacar o renovar tu pasaporte italiano?",
+    a: "Para solicitarlo en tu consulado, es importante que tu inscripción en el AIRE esté correcta y tus datos actualizados.",
   },
   {
     q: "Me casé, divorcié o enviudé. ¿Tengo que informarlo a Italia?",
@@ -406,7 +406,7 @@ export default function Home() {
               <div className="grid grid-cols-3 gap-3 mb-7">
                 {[
                   ["/img/lala-jose-taormina.webp", "Lala y José en Taormina", "50% 30%"],
-                  ["/img/lala-retrato.webp", "Retrato de Lala", "50% 35%"],
+                  ["/img/lala-retrato-centrada.webp", "Retrato de Lala", "50% 35%"],
                   ["/img/lala-jose-guia.webp", "Lala y José revisando una guía", "50% 35%"],
                 ].map(([src, alt, pos]) => (
                   <div key={src} className="relative aspect-[4/3] rounded-xl overflow-hidden">
@@ -541,9 +541,9 @@ export default function Home() {
                   <div className="flex items-center gap-3">
                     <div
                       className="rounded-full overflow-hidden flex-shrink-0"
-                      style={{ width: 52, height: 52, border: "2px solid rgba(244,235,224,0.25)" }}
+                      style={{ width: 72, height: 72, border: "2px solid rgba(244,235,224,0.25)" }}
                     >
-                      <Image src={foto} alt={nombre} width={52} height={52} className="object-cover w-full h-full" />
+                      <Image src={foto} alt={nombre} width={72} height={72} className="object-cover w-full h-full" />
                     </div>
                     <div>
                       <p className="font-bold text-sm" style={{ color: "var(--cream)" }}>
@@ -582,7 +582,7 @@ export default function Home() {
               </h2>
             </div>
 
-            <div className="grid md:grid-cols-2 gap-3 items-start">
+            <div className="grid min-[1100px]:grid-cols-2 gap-3 items-start">
               {FAQS.map(({ q, a }) => (
                 <details
                   key={q}
